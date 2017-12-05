@@ -1,0 +1,17 @@
+<vue-gwt:import class="com.axellience.vuegwtdemo.client.components.todolist.Todo"/>
+<b-container>
+  <b-row>
+    <b-col cols="6">
+      <input type="text" v-model="newTodoText" @keypress.enter="addTodo" />
+    </b-col>
+    <b-col cols="6">
+      <b-button variant="danger" @click="clearTodos" v-show="todos != null && !todos.isEmpty()">
+        Clear All
+      </b-button>
+      <b-button variant="warning" @click="clearDoneTodos" v-show="doneTodos > 0">
+        Clear Done
+      </b-button>
+    </b-col>
+  </b-row>
+  <todo v-for="Todo todo in todos" v-bind:todo="todo" @removeTodo="removeTodo"/>
+</b-container>

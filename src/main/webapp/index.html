@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <title>Bootstrap-Vue app</title>
+    
+    <!-- See http://google.github.io/material-design-icons/ -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Required Stylesheets -->
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+
+    <!-- Required scripts -->
+    <script src="https://unpkg.com/vue"></script>
+    
+    <!-- Add this after vue.js -->
+    <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    
+    <script>
+      window.BootstrapVue = {
+        bButton: Vue.component("bButton") // Returns a Component Constructor function
+      }
+    </script>  
+    
+    <script src="VueGwtDemo/VueGwtDemo.nocache.js"></script>
+  </head>
+
+  <body>
+    <!-- Our application root element -->
+    <div id="app" class="container">
+      <div class="row">
+        <div class="col s12">
+          <h3>Counter:</h3>
+          <div id="simpleCounterComponentContainer"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <h3>Temperature calculator:</h3>
+          <div id="temperatureCalcContainer"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <h3>TODO:</h3>
+          <div id="todoListComponentContainer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

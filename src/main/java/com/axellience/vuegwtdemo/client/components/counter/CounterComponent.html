@@ -1,0 +1,13 @@
+<div>
+  <b-button variant="warning" @click="counterValue++">
+		Increase
+	</b-button>
+  <b-button variant="secondary" @click="counterValue = 0">
+    Reset
+  </b-button>
+  <jqm-button variant="primary" :mini="true" size="lg" @click="counterValue--">
+    Decrease
+  </jqm-button>
+
+	<p>You pressed {{ counterValue }} times</p>
+</div>

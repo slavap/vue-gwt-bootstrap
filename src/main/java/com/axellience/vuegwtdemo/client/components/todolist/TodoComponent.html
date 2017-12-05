@@ -1,0 +1,13 @@
+<b-row v-bind:class='map("isDone", todo.isDone())' class="pt-2 pb-2" align-v="center">
+  <b-col cols="10">
+    <b-row align-v="center" no-gutters>
+      <b-form-checkbox v-model="isDoneTodo" :id="_uid.toString()" class="mb-0" />
+      <label :for="_uid" class="mb-0">{{ todo.getText() }}</label>
+    </b-row>
+  </b-col>
+  <b-col cols="2">
+    <b-button size="sm" variant="danger" @click="removeTodo">
+      <i class="material-icons">delete</i>
+    </b-button>
+  </b-col>
+</b-row>    
