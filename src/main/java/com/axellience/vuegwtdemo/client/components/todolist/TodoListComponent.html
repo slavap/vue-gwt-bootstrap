@@ -2,7 +2,7 @@
 <b-container>
   <b-row>
     <b-col cols="6">
-      <input type="text" v-model="newTodoText" @keypress.enter="addTodo" />
+      <input type="text" v-model="newTodoText" @keypress.enter="addTodo" style="min-width: 75%" />
     </b-col>
     <b-col cols="6">
       <b-button variant="danger" @click="clearTodos" v-show="todos != null && !todos.isEmpty()">

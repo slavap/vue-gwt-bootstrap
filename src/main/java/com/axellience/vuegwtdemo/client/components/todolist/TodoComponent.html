@@ -1,8 +1,17 @@
-<b-row v-bind:class='map("isDone", todo.isDone())' class="pt-2 pb-2" align-v="center">
+<b-row :class='map("isDone", todo.isDone())' class="pt-2 pb-2" align-v="center">
   <b-col cols="10">
     <b-row align-v="center" no-gutters>
-      <b-form-checkbox v-model="isDoneTodo" :id="_uid.toString()" class="mb-0" />
-      <label :for="_uid" class="mb-0">{{ todo.getText() }}</label>
+      <b-col cols="1">
+        <b-form-checkbox v-model="isDoneTodo" :id="_uid.toString()" class="mb-0 mt-1" />
+      </b-col>
+      <b-col cols="11">
+        <label :for="_uid.toString()" class="mb-0" style="max-width: 100%; word-wrap: break-word" 
+            :class='map(e("isDone", todo.isDone()), e("text-muted", todo.isDone()))'
+            :style='map(todo.isDone() ? e("text-decoration", "line-through") : e("", ""))'> 
+          {{ todo.getText() }}
+        </label>
+        <!-- Also possible: 'map(e("text-decoration", todo.isDone() ? "line-through" : "none"))' -->
+      </b-col>
     </b-row>
   </b-col>
   <b-col cols="2">
