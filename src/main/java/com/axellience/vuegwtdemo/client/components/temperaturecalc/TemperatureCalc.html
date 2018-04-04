@@ -1,5 +1,12 @@
-<div>
+<div class="root">
   <temperature-input scale="c" v-model="celsius" />
   <temperature-input scale="f" v-model="fahrenheit" />
   <boiling-verdict :celsius="celsius" />
 </div>
+
+<style scoped>
+  .root {
+    border: 1px grey solid;
+    padding: 3px;
+  }
+</style>

@@ -1,3 +1,4 @@
+<vue-gwt:import class="com.axellience.vuegwtdemo.client.components.bootstrap.JqmButtonSize" />
 <div>
   <b-button variant="warning" @click="counterValue++">
 		Increase
@@ -5,7 +6,7 @@
   <b-button variant="secondary" @click="counterValue = 0">
     Reset
   </b-button>
-  <jqm-button variant="primary" :mini="true" size="lg" @click="counterValue--">
+  <jqm-button variant="primary" :mini="false" :size="JqmButtonSize.LARGE" @click="counterValue--">
     Decrease
   </jqm-button>
 

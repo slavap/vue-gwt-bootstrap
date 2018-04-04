@@ -8,7 +8,7 @@
     <groupId>com.axellience</groupId>
     <artifactId>vue-gwt-bootstrap</artifactId>
     <packaging>war</packaging>
-    <version>1.0-beta-5</version>
+    <version>1.0-beta-8-SNAPSHOT</version> <!-- 1.0-beta-7 -->
     <name>Vue GWT Bootstrap demo project</name>
 
     <properties>
@@ -23,30 +23,43 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.axellience</groupId>
-            <artifactId>vue-gwt</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-		<dependency>
-			<groupId>com.axellience</groupId>
-			<artifactId>vue-gwt-processors</artifactId>
-			<version>${project.version}</version>
-			<optional>true</optional>
-		</dependency>
-
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>${gwtVersion}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>
-            <version>${gwtVersion}</version>
-            <scope>provided</scope>
-        </dependency>
+      <dependency>
+          <groupId>com.axellience</groupId>
+          <artifactId>vue-gwt</artifactId>
+          <version>${project.version}</version>
+      </dependency>
+  		
+      <dependency>
+  			<groupId>com.axellience</groupId>
+  			<artifactId>vue-gwt-processors</artifactId>
+  			<version>${project.version}</version>
+  			<optional>true</optional>
+  		</dependency>
+  
+      <dependency>
+          <groupId>com.google.gwt</groupId>
+          <artifactId>gwt-user</artifactId>
+          <version>${gwtVersion}</version>
+          <scope>provided</scope>
+      </dependency>
+      <dependency>
+          <groupId>com.google.gwt</groupId>
+          <artifactId>gwt-dev</artifactId>
+          <version>${gwtVersion}</version>
+          <scope>provided</scope>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.7.25</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.7.25</version>
+      </dependency>  
+        
     </dependencies>
 
 	<repositories>
@@ -55,14 +68,48 @@
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</repository>
 	</repositories>
+  
+  <profiles>
+    <profile>
+      <id>vue-gwt-resources</id>
+      <activation>
+          <property>
+              <name>!m2e.version</name>
+          </property>
+      </activation>
+      <build>
+          <resources>
+              <resource>
+                  <directory>src/main/java</directory>
+                  <includes>
+                      <include>**/*.html</include>
+                      <include>**/*.css</include>
+                  </includes>
+              </resource>
+          </resources>
+      </build>
+    </profile>
+  </profiles>
 
     <build>
         <!-- Output classes directly into the webapp, so that IDEs and "mvn process-classes" update them in DevMode -->
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes
         </outputDirectory>
+        
+        <resources>
+          <resource>
+            <directory>src/main/resources</directory>
+          </resource>
+          <!-- resource> 
+            <directory>src/main/java</directory>
+            <includes>
+              <include>**/*.html</include>
+            </includes>
+          </resource-->
+        </resources>
 
         <plugins>
-
+        
             <!-- Mojo's Maven Plugin for GWT -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
