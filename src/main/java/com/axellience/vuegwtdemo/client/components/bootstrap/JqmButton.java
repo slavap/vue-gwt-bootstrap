@@ -4,14 +4,14 @@ import com.axellience.vuegwt.core.annotations.component.Component;
 import com.axellience.vuegwt.core.annotations.component.Computed;
 import com.axellience.vuegwt.core.annotations.component.Prop;
 import com.axellience.vuegwt.core.annotations.component.PropValidator;
-import com.axellience.vuegwt.core.client.component.VueComponent;
+import com.axellience.vuegwt.core.client.component.IsVueComponent;
 
 import elemental2.dom.DomGlobal;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsProperty;
 
 @Component //(hasTemplate = false)
-public class JqmButton extends VueComponent {
+public class JqmButton implements IsVueComponent {
 
     @Prop @JsProperty boolean mini;
     @Prop @JsProperty String variant;
@@ -22,7 +22,7 @@ public class JqmButton extends VueComponent {
     }
 
     @JsMethod void onClick() {
-        this.$emit("click");
+        asVue().$emit("click");
     }
 
     @PropValidator("variant")
