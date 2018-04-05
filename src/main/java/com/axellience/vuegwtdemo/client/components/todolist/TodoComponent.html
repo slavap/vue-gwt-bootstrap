@@ -2,10 +2,10 @@
   <b-col cols="10">
     <b-row align-v="center" no-gutters>
       <b-col cols="1">
-        <b-form-checkbox v-model="isDoneTodo" :id="uid" class="mb-0 mt-1" />
+        <b-form-checkbox v-model="isDoneTodo" :id="asVue()._uid" class="mb-0 mt-1" />
       </b-col>
       <b-col cols="11">
-        <label :for="uid" class="mb-0" style="max-width: 100%; word-wrap: break-word" 
+        <label :for="asVue()._uid" class="mb-0" style="max-width: 100%; word-wrap: break-word" 
             :class='map(e("isDone", todo.isDone()), e("text-muted", todo.isDone()))'
             :style='map(todo.isDone() ? e("text-decoration", "line-through") : e("", ""))'> 
           {{ todo.getText() }}
@@ -19,4 +19,4 @@
       <i class="material-icons">delete</i>
     </b-button>
   </b-col>
-</b-row>    
+</b-row>

@@ -37,8 +37,4 @@ public class TodoComponent implements IsVueComponent
         this.todo.setDone(isDone);
     }
 
-    @Computed
-    public String getUid() {
-        return asVue()._uid.toString();
-    }
 }
