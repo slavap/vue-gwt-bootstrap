@@ -22,7 +22,7 @@ public class JqmButton implements IsVueComponent {
     }
 
     @JsMethod void onClick() {
-        asVue().$emit("click");
+        vue().$emit("click");
     }
 
     @PropValidator("variant")

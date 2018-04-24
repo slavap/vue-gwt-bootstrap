@@ -22,7 +22,7 @@ public class TodoComponent implements IsVueComponent
     @JsMethod
     public void removeTodo()
     {
-        asVue().$emit("removeTodo", todo);
+        vue().$emit("removeTodo", todo);
     }
 
     @Computed
