@@ -4,9 +4,11 @@
   <boiling-verdict :celsius="celsius" />
 </div>
 
-<style scoped>
+<style lang="scss" scoped>
+  @import '../TemperatureCommon';
+  
   .root {
-    border: 1px grey solid;
+    border: 1px $root-border-color solid;
     padding: 3px;
   }
 </style>

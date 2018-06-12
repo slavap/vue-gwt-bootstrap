@@ -7,20 +7,23 @@
   <p class="relax" v-else>The water would not boil.</p>
 </div>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  @import '../TemperatureCommon';
+  
   .root {
-    border: 1px blue solid;
+    border: 1px $boiling-border-color solid;
     margin: 5px;
   }
 
   .attention {
-    color: red;
+    color: $attention-color;
   }
   .attention > div {
-    color: orange;
+    color: $attention-info-color;
   }
   
   .relax {
-    color: green;
+    color: $relax-color;
   }
 </style>
