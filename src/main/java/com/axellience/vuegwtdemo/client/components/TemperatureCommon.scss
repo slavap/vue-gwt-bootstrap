@@ -7,3 +7,11 @@ $attention-color: red;
 $attention-info-color: orange;
 
 $relax-color: YellowGreen;
+
+$vendors: "-moz-", "-webkit-", ""; // you can add other vendor prefixes or remove them without needing to change the mixin.
+
+@mixin rounded($radius: 0.5em) {
+  @each $vendor in $vendors {
+    #{$vendor}border-radius: $radius;
+  }
+}

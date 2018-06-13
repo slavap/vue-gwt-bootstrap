@@ -2,3 +2,11 @@
   <legend>Enter temperature in {{scaleName}}:</legend>
   <input v-model="val" />
 </fieldset>
+
+<style lang="scss" scoped>
+  @import '../TemperatureCommon';
+  
+  input {
+    @include rounded;
+  }
+</style>
