@@ -4,15 +4,14 @@ import java.util.function.Function;
 
 import com.axellience.vuegwt.core.annotations.component.Component;
 import com.axellience.vuegwt.core.annotations.component.Computed;
+import com.axellience.vuegwt.core.annotations.component.Data;
 import com.axellience.vuegwt.core.client.component.IsVueComponent;
-
-import jsinterop.annotations.JsProperty;
 
 @Component(components = { BoilingVerdict.class, TemperatureInput.class })
 public class TemperatureCalc implements IsVueComponent {
 
-    @JsProperty String temperature = "";
-    @JsProperty String scale = "c";
+    @Data String temperature = "";
+    @Data String scale = "c";
 
     private static final Function<Double, Double> toCelsius = fahrenheit -> (fahrenheit - 32) * 5 / 9;
     private static final Function<Double, Double> toFahrenheit = celsius -> (celsius * 9 / 5) + 32;

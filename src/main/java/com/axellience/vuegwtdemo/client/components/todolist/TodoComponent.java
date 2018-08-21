@@ -6,7 +6,6 @@ import com.axellience.vuegwt.core.annotations.component.Prop;
 import com.axellience.vuegwt.core.client.component.IsVueComponent;
 
 import jsinterop.annotations.JsMethod;
-import jsinterop.annotations.JsProperty;
 
 /**
  * Display a Todo
@@ -14,7 +13,7 @@ import jsinterop.annotations.JsProperty;
 @Component
 public class TodoComponent implements IsVueComponent
 {
-    @Prop @JsProperty Todo todo;
+    @Prop Todo todo;
 
     /**
      * Emit an event when we want to delete the todo

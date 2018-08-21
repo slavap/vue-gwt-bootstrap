@@ -11,12 +11,11 @@ import com.axellience.vuegwt.core.client.component.IsVueComponent;
 
 import elemental2.dom.DomGlobal;
 import jsinterop.annotations.JsMethod;
-import jsinterop.annotations.JsProperty;
 
 @Component
 public class TemperatureInput implements IsVueComponent {
-    @Prop @JsProperty String value;
-    @Prop @JsProperty String scale;
+    @Prop String value;
+    @Prop String scale;
 
     private static final Map<String, String> scaleNames = new HashMap<String, String>() {{
         put("c", "Celsius");

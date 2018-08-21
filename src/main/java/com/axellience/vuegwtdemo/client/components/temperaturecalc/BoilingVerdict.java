@@ -5,11 +5,10 @@ import com.axellience.vuegwt.core.annotations.component.Prop;
 import com.axellience.vuegwt.core.client.component.IsVueComponent;
 
 import jsinterop.annotations.JsMethod;
-import jsinterop.annotations.JsProperty;
 
 @Component
 public class BoilingVerdict implements IsVueComponent {
-    @Prop @JsProperty String celsius;
+    @Prop String celsius;
 
     @JsMethod double parseFloat(String value) {
         if (value == null) return 0;
